@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./scripts/main.js" defer></script>
+</head>
+
+<body>
+  <form action="./scripts/main.js" method="post">
+    <fieldset>
+      <legend>Dados Obrigatorios</legend>
+      <div>
+        <label for="inNome">Nome Completo</label><br>
+        <input type="text" id="inNome" name="nome" placeholder="Digite seu nome" minlength="4" maxlength="20" required><br>
+      </div>
+      <label for="inEmail">Endereço</label>
+      <input type="email" id="inEmail" name="email" placeholder="email@email.com" required>
+      <label for="inPassword">Senha</label>
+      <input type="password" id="inPassword" name="senha" placeholder="Digite senha" required>
+    </fieldset>
+    <label for="inEndereco">Endereço</label>
+    <input type="text" id="inEndereco" name="Endereço" placeholder="Digite seu email" required>
+    <label for="inCep">CEP</label>
+    <input type="text" id="inCep" name="cep" placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" required>
+    <label for="inTelefone">Telefone</label>
+    <input type="tel" id="inTelefone" name="telefone" placeholder="Digite telefone" required>
+    <label for="inDate">Data</label>
+    <input type="date" id="inDate" name="data" required>
+    <label for="inUrl">Site</label>
+    <input type="url" id="inUrl" name="Site" placeholder="Digite o site">
+    <div>
+      <input type="radio" id="inMasculino" name="sexo" value="M" required>
+      <label for="inMasculino">Masculino</label>
+      <input type="radio" id="inFeminino" name="sexo" value="F" required>
+      <label for="inFeminino">Feminino</label>
+    </div>
+    <div>
+      <input type="checkbox" id="inTec" name="interesses" value="tec">
+      <label for="inTec">tecnologia</label>
+      <input type="checkbox" id="inInfo" name="info" value="info">
+      <label for="inInfo">informação</label>
+      <input type="checkbox" id="inDados" name="dados" value="dados">
+      <label for="inDados">dados</label>
+    </div>
+    <label for="inEstCivil">Estado Civil</label>
+    <select name="EstadoCivil" id="inEstCivil" required>
+      <option value="solteiro">Solteiro</option>
+      <option value="casado">Casado</option>
+      <option value="divorciado">Divorciado</option>
+      <option value="viuvo">Viúvo</option>
+    </select>
+    <div style="margin-top: 2rem;">
+      <input type="submit" value="Enviar"></input>
+      <input type="reset" value="Redefinir"></input>
+    </div>
+    <fieldset>
+      <legend>Dados Obrigatorios</legend>
+      <div>
+        <input type="radio" id="inCsharp" name="Linguagem">
+        <label name="Linguagem">C#</label>
+      </div>    
+      <div>
+        <input type="radio" id="inCpp" name="Linguagem">
+        <label name="Linguagem">C++</label>
+      </div>
+      <div>
+        <input type="radio" id="inC" name="Linguagem">
+        <label name="Linguagem">C</label>
+      </div> 
+      <div>
+        <input type="radio" id="inKotlin" name="Linguagem">
+        <label name="Linguagem">Kotlin</label>
+      </div>
+    </fieldset>
+  </form>
+</body>
+
+</html>

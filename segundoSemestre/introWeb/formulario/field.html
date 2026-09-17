@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fieldtest</title>
+	<script src="./main.js" defer></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<h1>Cadastro de Usuário</h1>
+	<form action="./field.html" method="post">
+		<fieldset>
+			<legend>Dados Pessoais</legend>
+			<div>
+			  <label for="inNome">Nome Completo</label><br>
+        <input type="text" id="inNome" name="nome" placeholder="Digite seu nome" minlength="4" maxlength="20" required><br>
+      </div>
+			<div>
+				<label for="inEmail">Endereço</label><br>
+				<input type="email" id="inEmail" name="email" placeholder="email@email.com" required>
+			</div>
+			<div>
+     		<label for="inPassword">Senha</label><br>
+      	<input type="password" id="inPassword" name="senha" placeholder="Digite senha" required>
+			</div>
+		</fieldset>
+    <div style="margin-top: 0.5rem;">
+      <input type="submit" value="Enviar"></input>
+      <input type="reset" value="Redefinir"></input>
+    </div>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    margin: 0rem;
+}
+
+section{
+    display: grid;
+    gap: 40px;
+}
+
+#table{
+    text-align: center;
+    width: 40%;
+    border: solid #000 0.125rem;
+}

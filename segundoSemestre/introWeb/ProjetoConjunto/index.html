@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJETO CONJUNTO</title>
+    <script src="./scripts/main.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Programa do Projeto Conjunto</h1>
+    <label for="inLength">Digite o tamanho do conjunto: 
+        <input type="number" id="inLength" placeholder="">
+        <button type="button" id="btn" onclick="eventoCriarConjunto()">Confirmar</button>
+    </label>
+    <h2>Apresentação do Conjunto Criado Aleatoriamente</h2>
+    <h3><p id="onSaida"></p></h3>
+
+    <h1>Busca Sequencial Conjunteo Não Ordenado</h1>
+    <label for="inSearch">Digite o valor a ser encontrado:
+        <input type="number" id="inSearch" placeholder="">
+        <button type="button" id="btnBusca" onclick="searchOnArray()">Confirmar</button>
+    </label>
+    <h2>Resultado da Busca Sequencial: </h2>
+    <h3><p id="saidaBusca"></p></h3>
+
+    <h1>Ordenação do conjunto</h1>
+    <button type="button" id="btnOrdenar" onclick="arrayOrdenado()">Ordenar</button>
+    <h3><p id="saidaOrdernada"></p></h3>
+</body>
+</html>

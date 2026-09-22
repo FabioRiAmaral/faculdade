@@ -1,10 +1,23 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sort Metodos</title>
+    <script src="./script/main.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <h1>Geração Aleatoria</h1>
+    <label for="inLength">Tamanho array: 
+        <input type="number" id="inLength">
+        <button type="button" id="btnLength" onclick="eventCriarArray()">Confirmar</button>
+    </label>
+    <h3><p id="onSaidaVetorAleatorio"></p></h3>
+    <h1>Bubble Sort</h1>
+    <label>
+        <button type="button" id="btnBubbleSort" onclick="bubbleSort()">Ordenar</button>
+    </label>
+    <h3><p id="onBubbleSort"></p></h3>
 </body>
 </html>

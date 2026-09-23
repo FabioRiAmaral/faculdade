@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumoGeral</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <form action="./field.html" method="post">
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="form-group">
+          <label for="inNome">Nome Completo</label>
+          <input type="text" id="inNome" name="nome" placeholder="Digite seu nome" minlength="4" maxlength="20" required>
+        </div>
+        <div class="form-group">
+          <label for="inCpf">CPF</label>
+          <input type="text" id="inCpf" name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+        </div>
+        <div class="form-group">
+          <label for="inDate">Data de Nascimento</label>
+          <input type="date" id="inDate" name="data" required>
+        </div>
+        <div class="form-group-row">
+          <span class="label-mock">Sexo:</span>
+          <div class="options-group">
+            <input type="radio" id="inMasculino" name="sexo" value="M" required>
+            <label for="inMasculino">Masculino</label>
+            <input type="radio" id="inFeminino" name="sexo" value="F" required>
+            <label for="inFeminino">Feminino</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inEstCivil">Estado Civil:</label>
+          <select name="EstadoCivil" id="inEstCivil" required>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viuvo">Viúvo</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dado de contato</legend>
+        <div class="form-group">
+          <label for="inEmail">E-mail:</label>
+          <input type="email" id="inEmail" name="email" placeholder="email@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="insite">Website:</label>
+          <input type="url" id="insite" name="websit" placeholder="www.website.com" required>
+        </div>
+        <div class="form-group">
+          <label for="inEndereco">Endereço:</label>
+          <input type="text" id="inEndereco" name="Endereço" placeholder="Digite seu endereço" required>
+        </div>
+        <div class="form-group">
+          <label for="inBairro">Bairro:</label>
+          <input type="text" id="inBairro" name="bairro" placeholder="Digite seu bairro" required>
+        </div>
+        <div class="form-group">
+          <label for="inCidade">Cidade:</label>
+          <input type="text" id="inCidade" name="cidade" placeholder="Digite sua cidade" required>
+        </div>
+        <div class="form-group">
+          <label for="inUf">UF:</label>
+          <select name="uf" id="inUf" required>
+            <option value="ac">AC</option>
+            <option value="al">AL</option>
+            <option value="ap">AP</option>
+            <option value="am">AM</option>
+            <option value="ba">BA</option>
+            <option value="ce">CE</option>
+            <option value="es">ES</option>
+            <option value="go">GO</option>
+            <option value="df">DF</option>
+            <option value="ma">MA</option>
+            <option value="mt">MT</option>
+            <option value="ms">MS</option>
+            <option value="mg">MG</option>
+            <option value="pa">PA</option>
+            <option value="pb">PB</option>
+            <option value="pr">PR</option>
+            <option value="pe">PE</option>
+            <option value="pi">PI</option>
+            <option value="rj">RJ</option>
+            <option value="rn">RN</option>
+            <option value="rs">RS</option>
+            <option value="ro">RO</option>
+            <option value="rr">RR</option>
+            <option value="rc">SC</option>
+            <option value="sp">SP</option>
+            <option value="se">SE</option>
+            <option value="to">TO</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inCep">CEP:</label>
+          <input type="text" id="inCep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" required>
+        </div>
+        <div class="form-group">
+          <label for="inTel">Telefone:</label>
+          <input type="tel" id="inTel" name="cidade" placeholder="Digite seu telefone" required>
+        </div>
+        <div class="form-group">
+          <label for="inCelular">Celular:</label>
+          <input type="tel" id="inCelular" name="celular" placeholder="Digite seu celular" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados de Cadastro</legend>
+        <div class="form-group">
+          <label for="inLogin">Login:</label>
+          <input type="text" id="inLogin" name="login" placeholder="Login" required>
+        </div>
+        <div class="form-group">
+          <label for="inSenha">Senha:</label>
+          <input type="password" id="inSenha" name="senha" placeholder="Senha" required>
+        </div>
+        <div class="form-group-checkboxes">
+          <span id="checkbox-group-title" class="label-mock">Deseja receber informações sobre:</span>
+          <div role="group" aria-labelledby="checkbox-group-title" class="checkbox-grid">
+            <div class="checkbox-item">
+              <input type="checkbox" id="inTec" name="interesses" value="tec">
+              <label for="inTec">Tecnologia</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inEsp" name="interesses" value="esporte">
+              <label for="inEsp">Esporte</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inAut" name="interesses" value="automoveis">
+              <label for="inAut">Automóveis</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inCulinaria" name="interesses" value="culinaria">
+              <label for="inCulinaria">Culinária</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inPolitica" name="interesses" value="Politica">
+              <label for="inPolitica">Política</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inTempo" name="interesses" value="Tempo">
+              <label for="inTempo">Tempo</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inCultura" name="interesses" value="Cultura">
+              <label for="inCultura">Cultura</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inEconomia" name="interesses" value="Economia">
+              <label for="inEconomia">Economia</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inJogos" name="interesses" value="Jogos">
+              <label for="inJogos">Jogos</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inEducacao" name="interesses" value="Educacao">
+              <label for="inEducacao">Educação</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inViagem" name="interesses" value="Viagem">
+              <label for="inViagem">Viagem</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inEmpregos" name="interesses" value="Empregos">
+              <label for="inEmpregos">Empregos</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="inModa" name="interesses" value="Moda">
+              <label for="inModa">Moda e Estilo</label>
+            </div>
+          </div>
+          <div class="checkbox-agreement">
+            <input type="checkbox" id="inAgree" name="interesses" value="Agree" required>
+            <label for="inAgree">Li as regras de cadastro e autorizo a criação do usuário</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit">Enviar</button>
+        <button type="reset">Redefinir</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

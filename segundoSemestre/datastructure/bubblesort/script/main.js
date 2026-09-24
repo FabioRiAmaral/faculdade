@@ -16,28 +16,54 @@ function eventCriarArray(){
     criarArray(array, length);
     onSaidaVetorAleatorio.innerHTML = "Conjunto = " + array.join(", ");
 }
-btnLength.addEventListener('onclick', eventCriarArray);
+btnLength.addEventListener('click', eventCriarArray);
 
 const btnBubbleSort = document.getElementById("btnBubbleSort");
 const onBubbleSort = document.getElementById("onBubbleSort");
 
 function bubbleSort(){
     const length = parseInt(inLength.value);
-    let arrayOrdenado = [];
-    for(let e = 0;e<(array.length);e++){
-        arrayOrdenado[e] = array[e];
-    }
+    let arrayOrdenado = [...array]; //3 pontos passa cada elemento do array para dentro do novo invés de referenciar
     let temp = 0;
     for(let e = 0;e<length;e++){
         for(let i = 0;i<(length-1);i++){
             if(arrayOrdenado[i]>arrayOrdenado[i+1]){
-                temp = arrayOrdenado[i+1];
-                arrayOrdenado[i+1] = array[i];
-                arrayOrdenado[i] = temp;
+                temp = arrayOrdenado[i];
+                arrayOrdenado[i] = arrayOrdenado[i+1];
+                arrayOrdenado[i+1] = temp;
             }
         }
     }
-    console.log(arrayOrdenado);
-    onBubbleSort.innerHTML = "Conjunto = " + arrayOrdenado.join(", ");
+    onBubbleSort.innerHTML = "Conjunto Ordenado = " + arrayOrdenado.join(", ");
 }
-btnBubbleSort.addEventListener('onclick', bubbleSort);
+btnBubbleSort.addEventListener('click', bubbleSort);
+
+const inBusca = document.getElementById("inBusca");
+const btnBuscaBinary = document.getElementById("btncBuscaBinary");
+
+function binarySearch(array, position, numero){
+    if(array[position]>numero){
+        return(position+(position/2));
+    }else if(array[position]<numero){
+        return(position/2);
+    }else{
+        return(true);
+    }
+}
+
+function binarySearchMontagem(array, numeroBusca){
+    const length = parseInt(inLength.value);
+    const originalArrayCopy = [...array];
+    let tempPosition = length/2;
+    let loop = true;
+    let encontrado;
+    while(loop){
+        let busca = binarySearch(originalArrayCopy, tempPosition, numeroBusca);
+        if(busca!=true){
+            tempPosition = busca;
+        }else{
+            encontrado = tempPosition;
+        }
+    }
+    console.log(encontrado);
+}

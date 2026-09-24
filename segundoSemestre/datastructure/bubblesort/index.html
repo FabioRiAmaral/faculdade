@@ -9,15 +9,22 @@
 </head>
 <body>
     <h1>Geração Aleatoria</h1>
-    <label for="inLength">Tamanho array: 
-        <input type="number" id="inLength">
-        <button type="button" id="btnLength" onclick="eventCriarArray()">Confirmar</button>
-    </label>
+    <label for="inLength">Tamanho array: </label>
+    <input type="number" id="inLength">
+    <button type="button" id="btnLength">Confirmar</button>
     <h3><p id="onSaidaVetorAleatorio"></p></h3>
     <h1>Bubble Sort</h1>
     <label>
-        <button type="button" id="btnBubbleSort" onclick="bubbleSort()">Ordenar</button>
+        <button type="button" id="btnBubbleSort">Ordenar</button>
     </label>
     <h3><p id="onBubbleSort"></p></h3>
+    <hr>
+    <section>
+        <h2>Busca Binaria</h2>
+        <label for="inBusca">Qual valor deseja buscar dentro do conjunto: </label>
+        <input type="number" id="inBusca">
+        <button id="btnBuscaBinary" type="button">Buscar</button>
+        <p id="onSaidaBuscaBinary"></p>
+    </section>
 </body>
 </html>

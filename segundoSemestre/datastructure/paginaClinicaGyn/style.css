@@ -12,3 +12,23 @@ div{
   display: flex;
   flex-direction: column;
 }
+
+.fieldsetDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;  
+}
+
+/* #popUpOverlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.infoConsulta, h2{
+    margin: 0px;
+} */

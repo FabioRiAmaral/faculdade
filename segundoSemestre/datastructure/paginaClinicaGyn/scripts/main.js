@@ -8,8 +8,8 @@ class Paciente{
         this.#sexo = sexo;
     }
     set peso(newName){this.#peso = newName;}
-    set altura(newName){this.#altura = newName;}
-    set sexo(newName){this.#sexo = newName;}
+    set altura(newAltura){this.#altura = newAltura;}
+    set sexo(newSexo){this.#sexo = newSexo;}
     get peso(){return(this.#peso);}
     get altura(){return(this.#altura);}
     get sexo(){return(this.#sexo);}
@@ -34,39 +34,52 @@ class Paciente{
   }
 
   pesoIdeal(){
-    if(this.#sexo == 'm'){
+    if(this.#sexo === 'm'){
       return((72.7*this.#altura)-58);
-    }else if(this.#sexo == 'f'){
+    }else if(this.#sexo === 'f'){
       return((62.1*this.#altura)-44.7);
     }
+    return(0);
   }
 }
 
-// inNome = document.getElementById("inNome");
-// inPeso = parseFloat(document.getElementById("inPeso").value);
-// inAltura = parseFloat(document.getElementById("inAltura").value);
-// inSexo = document.getElementById("inSexo");
+// const inNome = document.getElementById("inNome");
+// const inPeso = document.getElementById("inPeso");
+// const inAltura = document.getElementById("inAltura");
+// const inSexo = document.getElementById("inSexo");
 
-allForm = document.getElementById("allForm");
-inConsultar = document.getElementById("inConsultar");
-outImc = document.getElementById("outImc");
-outFaixaRisco = document.getElementById("outFaixaRisco");
-outPesoIdeal = document.getElementById("outPesoIdeal");
+const allForm = document.getElementById("allForm");
+const inConsultar = document.getElementById("inConsultar");
+const outImc = document.getElementById("outImc");
+const outFaixaRisco = document.getElementById("outFaixaRisco");
+const outPesoIdeal = document.getElementById("outPesoIdeal");
+
+function out(iD, outVariable){
+  iD.innerHTML = `${outVariable}`;
+}
 
 function dadosSaude(peso, altura, sexo){
-    const saudePaciente = new Paciente(peso, altura, sexo);
-    const imc = (saudePaciente.calcularImc()).toFixed(2);
-    const faixaDeRisco = saudePaciente.faixaDeRisco();
-    const pesoIdeal = saudePaciente.pesoIdeal();
-    outImc.innerHTML = `${imc}`;
-    outFaixaRisco = faixaDeRisco;
-    outPesoIdeal = `${pesoIdeal}`;
+  const saudePaciente = new Paciente(peso, altura, sexo);
+  const imc = (saudePaciente.calcularImc()).toFixed(2);
+  const faixaDeRisco = saudePaciente.faixaDeRisco();
+  const pesoIdeal = (saudePaciente.pesoIdeal()).toFixed(2);
+  out(outImc, imc);
+  out(outFaixaRisco, faixaDeRisco);
+  out(outPesoIdeal, pesoIdeal);
 }
 
-function saidaSaude(){
-    event.preventDefault();
-    const dados = Object.fromEntries(new FormData(allForm));
-    dadosSaude(dados.peso, dados.altura, dados.sexo);
+function saidaSaude(event){
+  event.preventDefault(); 
+  // let peso = parseFloat(inPeso.value);
+  // let altura = parseFloat(inAltura.value);
+  // let sexo = inSexo.value;
+  try{ 
+    const dados = Object.fromEntries(new FormData(allForm));//Pega todos os campos do form, os canois entram em uma classe que recebe "name" como seu parametro, sendo necessario get para receber
+    dadosSaude(parseInt(dados.peso), parseFloat(dados.altura), dados.sexo);
+    // dadosSaude(peso, altura, sexo);
+  }catch(error){
+    console.log("Algum dado é invalido!");
+  }
 }
 
-inConsultar.addEventListener('submit', saidaSaude);
+allForm.addEventListener('submit', saidaSaude);

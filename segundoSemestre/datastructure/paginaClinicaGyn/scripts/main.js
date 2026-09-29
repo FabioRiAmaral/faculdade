@@ -1,15 +1,19 @@
 class Paciente{
+    #nome
     #peso
     #altura
     #sexo
-    constructor(peso, altura, sexo){
+    constructor(nome, peso, altura, sexo){
+        this.#nome = nome;
         this.#peso = peso;
         this.#altura = altura;
         this.#sexo = sexo;
     }
-    set peso(newName){this.#peso = newName;}
+    set nome(newName){this.#nome = newName;}
+    set peso(newPeso){this.#peso = newPeso;}
     set altura(newAltura){this.#altura = newAltura;}
     set sexo(newSexo){this.#sexo = newSexo;}
+    get nome(){return(this.#nome);}
     get peso(){return(this.#peso);}
     get altura(){return(this.#altura);}
     get sexo(){return(this.#sexo);}

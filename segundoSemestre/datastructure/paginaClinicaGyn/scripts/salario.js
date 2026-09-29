@@ -75,7 +75,7 @@ class Funcionario{
 
     gerarContraque(){
         const salarioLiquido = this.salarioBruto()-(this.descontoInss+this.descontoIrpf);
-        const contracheque = `Matricula: ${this.#matricula}\nNome: ${this.#nome}\nNúmero de dependentes: ${this.#numDependentes}\nSalário base: ${this.#salarioBase}\nValor da gatificação: ${this.valorGratificacao()}\nSalário Bruto: ${this.salarioBruto()}\nValor de desconto do INSS: ${this.descontoInss()}\nValor do desconto do IRPF: ${this.descontoIrpf()}\nValor total do desconto por dependentes: ${this.descontoDependentes()}\nSálario líquido: ${salarioLiquido}`;
+        const contracheque = `Matricula: ${this.#matricula}<br>Nome: ${this.#nome}<br>Número de dependentes: ${this.#numDependentes}<br>Salário base: ${this.#salarioBase}<br>Valor da gatificação: ${this.valorGratificacao()}<br>Salário Bruto: ${this.salarioBruto()}<br>Valor de desconto do INSS: ${this.descontoInss()}<br>Valor do desconto do IRPF: ${this.descontoIrpf()}<br>Valor total do desconto por dependentes: ${this.descontoDependentes()}<br>Sálario líquido: ${salarioLiquido}`;
         return(contracheque);
     }
 }

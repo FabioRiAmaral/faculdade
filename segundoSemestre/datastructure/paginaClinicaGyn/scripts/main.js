@@ -47,11 +47,6 @@ class Paciente{
   }
 }
 
-// const inNome = document.getElementById("inNome");
-// const inPeso = document.getElementById("inPeso");
-// const inAltura = document.getElementById("inAltura");
-// const inSexo = document.getElementById("inSexo");
-
 const allForm = document.getElementById("allForm");
 const inConsultar = document.getElementById("inConsultar");
 const outImc = document.getElementById("outImc");
@@ -74,13 +69,9 @@ function dadosSaude(peso, altura, sexo){
 
 function saidaSaude(event){
   event.preventDefault(); 
-  // let peso = parseFloat(inPeso.value);
-  // let altura = parseFloat(inAltura.value);
-  // let sexo = inSexo.value;
   try{ 
-    const dados = Object.fromEntries(new FormData(allForm));//Pega todos os campos do form, os canois entram em uma classe que recebe "name" como seu parametro, sendo necessario get para receber
-    dadosSaude(parseInt(dados.peso), parseFloat(dados.altura), dados.sexo);
-    // dadosSaude(peso, altura, sexo);
+    const dados = Object.fromEntries(new FormData(allForm));
+    dadosSaude(parseFloat(dados.peso), parseFloat(dados.altura), dados.sexo);
   }catch(error){
     console.log("Algum dado é invalido!");
   }

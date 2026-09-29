@@ -39,6 +39,43 @@ class Funcionario{
     }
 
     descontoInss(){
-        return();
+        const salarioBruto = this.salarioBruto();
+        if(salarioBruto<=1412){
+
+        }else if(salarioBruto>1412&&salarioBruto<=2666.68){
+
+        }else if(salarioBruto>2666.68&&salarioBruto<=4000.03){
+
+        }
+        return(salarioBruto*0.14);
+    }
+
+    descontoDependentes(){
+        return(123*this.#numDependentes);
+    }
+
+    descontoIrpf(){
+        const salarioBruto = this.salarioBruto();
+        const desconto = this.descontoDependentes();
+        let irpf;
+        if(salarioBruto>2259.20&&salarioBruto<=2826.65){
+            irpf = ((salarioBruto*0.075)-desconto);
+        }else if(salarioBruto>2826.65&&salarioBruto<=3751.05){
+            irpf = ((salarioBruto*0.15)-desconto);
+        }else if(salarioBruto>3751.05&&salarioBruto<=2664.68){
+            irpf = ((salarioBruto*0.225)-desconto);
+        }else if(salarioBruto>2664.68){
+            irpf = ((salarioBruto*0.275)-desconto);
+        }
+        if(irpf>0){
+            return(irpf);
+        }
+        return(0);
+    }
+
+    gerarContraque(){
+        const salarioLiquido = this.salarioBruto()-(this.descontoInss+this.descontoIrpf);
+        const contracheque = `Matricula: ${this.#matricula}\nNome: ${this.#nome}\nNúmero de dependentes: ${this.#numDependentes}\nSalário base: ${this.#salarioBase}\nValor da gatificação: ${this.valorGratificacao()}\nSalário Bruto: ${this.salarioBruto()}\nValor de desconto do INSS: ${this.descontoInss()}\nValor do desconto do IRPF: ${this.descontoIrpf()}\nValor total do desconto por dependentes: ${this.descontoDependentes()}\nSálario líquido: ${salarioLiquido}`;
+        return(contracheque);
     }
 }

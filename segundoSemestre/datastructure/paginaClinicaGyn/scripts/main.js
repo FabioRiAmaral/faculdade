@@ -57,8 +57,8 @@ function out(iD, outVariable){
   iD.innerHTML = `${outVariable}`;
 }
 
-function dadosSaude(peso, altura, sexo){
-  const saudePaciente = new Paciente(peso, altura, sexo);
+function dadosSaude(nome, peso, altura, sexo){
+  const saudePaciente = new Paciente(nome, peso, altura, sexo);
   const imc = (saudePaciente.calcularImc()).toFixed(2);
   const faixaDeRisco = saudePaciente.faixaDeRisco();
   const pesoIdeal = (saudePaciente.pesoIdeal()).toFixed(2);
@@ -71,7 +71,7 @@ function saidaSaude(event){
   event.preventDefault(); 
   try{ 
     const dados = Object.fromEntries(new FormData(allForm));
-    dadosSaude(parseFloat(dados.peso), parseFloat(dados.altura), dados.sexo);
+    dadosSaude(dados.nome, parseFloat(dados.peso), parseFloat(dados.altura), dados.sexo);
   }catch(error){
     console.log("Algum dado é invalido!");
   }

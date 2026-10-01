@@ -4,19 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Solutions</title>
+  <link rel="icon" href="./Imagem colada.png">
   <script src="./scripts/main.js" defer></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <h1>Fábio Ribeiro do Amaral Filho</h1>
+  <h1 id="aluno">Fábio Ribeiro do Amaral Filho</h1>
   <header id="header">
-    <section>
-      <h1>Tech Solutions</h1>
-      <p>Soluções em tecnologia, suporte e desenvolvimento para pessoas e empresas.</p>
-      <img src="./Imagem colada.png">
+    <section class="headerIntroduction">
+      <div>
+        <h1>Tech Solutions</h1>
+        <p>Soluções em tecnologia, suporte e desenvolvimento para pessoas e empresas.</p>
+      </div>
+      <a href="https://www.instagram.com/vampetaoficial/?hl=pt-br">
+        <img src="./Vampeta2.png">
+      </a>
     </section>
     <hr>
-    <section>
+    <section class="linksHeader">
       <span>
         <a href="#sobre">Sobre |</a>
         <a href="#servicos"> Serviços |</a>
@@ -38,7 +43,7 @@
       <h2>Serviços Prestados</h2>
       <p>Conheça algumas das nossas principais áreas de atuação</p>
       <nav>
-        <ul>header
+        <ul>
           <li>manutenção de Computadores</li>
           <ul>
             <li>Formatação e instalção de sistemas</li>
@@ -71,55 +76,57 @@
       </nav>
     </section>
     <hr>
-    <section>
-      <h2>Tabela de Valores</h2>
-      <table id="table" border="2">
-        <caption>Valores dos Principais Serviços</caption>
-        <thead id="tableHead">
-          <tr>
-            <th>Categoria</th>
-            <th>Serviço</th>
-            <th>Prazo Médio</th>
-            <th>Valor</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <th rowspan="3">Manutenção</th>
-          <tr>
-            <td>Formatação de Computador</td>
-            <td>1 dia</td>
-            <td>R$ 120,00</td>
-          </tr>
-          <tr>
-            <td>Limpeza Preventiva</td>
-            <td>2 horas</td>
-            <td>R$ 80,00</td>
-          </tr>
-          <th rowspan="3">Desenvolvimento</th>
-          <tr>
-            <td>Site Institucioal</td>
-            <td>7 dias</td>
-            <td>R$ 800,00</td>
-          </tr>
-          <tr>
-            <td>Página de Divulgação</td>
-            <td>3 dias</td>
-            <td>R$ 400,00</td>
-          </tr>
-          <th rowspan="2">Redes</th>
-          <tr>
-            <td>Configuração de Rede Wi-Fi</td>
-            <td>2 horas</td>
-            <td>R$ 150,00</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <th colspan="3">Orçamento personalizado para outros serviços</th>
-            <td>Consulte</td>
-          </tr>
-        </tfoot>
-      </table>
+    <section style="display: flex; justify-content: center;">
+      <section class="tabelaSection">
+        <h2>Tabela de Valores</h2>
+        <table id="table" border="2">
+          <caption>Valores dos Principais Serviços</caption>
+          <thead id="tableHead">
+            <tr>
+              <th>Categoria</th>
+              <th>Serviço</th>
+              <th>Prazo Médio</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <th rowspan="3">Manutenção</th>
+            <tr>
+              <td>Formatação de Computador</td>
+              <td>1 dia</td>
+              <td>R$ 120,00</td>
+            </tr>
+            <tr>
+              <td>Limpeza Preventiva</td>
+              <td>2 horas</td>
+              <td>R$ 80,00</td>
+            </tr>
+            <th rowspan="3">Desenvolvimento</th>
+            <tr>
+              <td>Site Institucioal</td>
+              <td>7 dias</td>
+              <td>R$ 800,00</td>
+            </tr>
+            <tr>
+              <td>Página de Divulgação</td>
+              <td>3 dias</td>
+              <td>R$ 400,00</td>
+            </tr>
+            <th rowspan="2">Redes</th>
+            <tr>
+              <td>Configuração de Rede Wi-Fi</td>
+              <td>2 horas</td>
+              <td>R$ 150,00</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="3">Orçamento personalizado para outros serviços</th>
+              <td>Consulte</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
     </section>
     <hr>
     <section id="formulario">

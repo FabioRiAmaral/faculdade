@@ -1,0 +1,57 @@
+body{
+  margin: 0px;
+  cursor: url('./VampetaMouse.png'), auto;
+  background: linear-gradient(135deg, #fff 0%, #e8fdf6 50%, #fff 100%);
+}
+#aluno{
+  text-align: center;
+}
+
+.headerIntroduction{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerIntroduction img{
+  width: 20rem;
+  transform-origin: right center;
+  transform: scaleX(3.5);
+}
+
+.linksHeader{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.linksHeader a{
+  display: inline-block;
+  line-break: normal;
+  color: #000;
+  text-decoration: none;
+}
+
+#sobre{
+  text-align: center;
+}
+
+.tabelaSection{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabelaSection table{
+  background-image: url("./VampetaMouse.png");
+  background-color: rgba(255,255,255,0.6);
+  background-blend-mode: lighten;
+  z-index: -1;
+}
+
+#formulario form fieldset{
+  margin-left: 1rem;
+  width:fit-content;
+}

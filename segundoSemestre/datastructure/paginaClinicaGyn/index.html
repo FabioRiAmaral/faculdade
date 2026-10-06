@@ -2,53 +2,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <script type="module" src="./scripts/main.js" defer></script>
   <link rel="stylesheet" href="./style.css">
   <title>Clínica GYN</title>
 </head>
 <body>
-  <h1>Clínica Gyn</h1>
-  <form id="allForm">
-    <fieldset>
-      <legend>Dados do Paciente</legend>
-      <div class="fieldsetDiv">
-        <div>
-          <label for="inNome">Nome Completo: </label>
-          <input type="text" id="inNome" placeholder="Digite seu nome" name="nome" required>
-        </div>
-        <div>
-          <label for="inPeso">Peso: </label>
-          <input type="number" id="inPeso" placeholder="000 Kg" name="peso" required>
-        </div>
-        <div>
-          <label for="inAltura">Altura: </label>
-          <input type="number" id="inAltura" step="0.01" pattern="\d{1}\.\d{2}" name="altura" placeholder="0.00 m" required>
-        </div>
-        <div>
-          <label>Sexo: </label>
-          <div style="display: block;">
-            <input type="radio" id="inMasculino" name="sexo" value="m" required>
-            <label for="inMasculino">Masculino</label>
-            <input type="radio" id="inFeminino" name="sexo" value="f" required>
-            <label for="inFeminino">Feminino</label>
+  <header>
+    <h1>Clínica Gyn</h1>
+    <ul style="list-style: none;">
+      <li>teste</li>
+      <li>teste</li>
+    </ul>
+  </header>
+  <main>
+    <form id="allForm">
+      <fieldset class="fieldsetPaciente">
+        <legend>Dados do Paciente</legend>
+        <div class="fieldsetDiv">
+          <div>
+            <label for="inNome">Nome Completo: </label>
+            <input type="text" id="inNome" placeholder="Digite seu nome" name="nome" required>
+          </div>
+          <div>
+            <label for="inPeso">Peso: </label>
+            <input type="number" id="inPeso" placeholder="000 Kg" name="peso" required>
+          </div>
+          <div>
+            <label for="inAltura">Altura: </label>
+            <input type="number" id="inAltura" step="0.01" pattern="\d{1}\.\d{2}" name="altura" placeholder="0.00 m" required>
+          </div>
+          <div>
+            <label>Sexo: </label>
+            <div style="display: block;">
+              <input type="radio" id="inMasculino" name="sexo" value="m" required>
+              <label for="inMasculino">Masculino</label>
+              <input type="radio" id="inFeminino" name="sexo" value="f" required>
+              <label for="inFeminino">Feminino</label>
+            </div>
           </div>
         </div>
+      </fieldset>
+      <div class="buttons">
+        <input id="inConsultar" type="submit" value="Consultar"></input>
+        <input type="reset" value="Redefinir"></input>
       </div>
-    </fieldset>
-    <div style="margin: 0.5rem 0.25rem; display: flex; flex-direction: row; justify-content: space-between;">
-      <input id="inConsultar" type="submit" value="Consultar"></input>
-      <input type="reset" value="Redefinir"></input>
-    </div>
-  </form>
-  <section id="popUpOverlay">
-    <div id="popUp">
-      <h2>Resultados da consulta:</h2>
-      <div class="infoConsulta">
-        <p>IMC: <span id="outImc"></span></p>
-        <p>Faixa de Risco: <span id="outFaixaRisco"></span></p>
-        <p>Peso Ideal: <span id="outPesoIdeal"></span>kg</p>
+    </form>
+    <section style="grid-template-rows: 1fr 1fr;">
+      <div>
+        <h2>Resultados da consulta:</h2>
+        <div class="infoConsulta">
+          <p>Nome: <span id="outName"></span></p>
+          <p>IMC: <span id="outImc"></span></p>
+          <p>Faixa de Risco: <span id="outFaixaRisco"></span></p>
+          <p>Peso Ideal: <span id="outPesoIdeal"></span></p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 </body>
 </html>

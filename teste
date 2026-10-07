@@ -1,0 +1,191 @@
+[1mdiff --git a/segundoSemestre/datastructure/bubblesort/script/main.js b/segundoSemestre/datastructure/bubblesort/script/main.js[m
+[1mindex f1a5b7a..76a5b8b 100644[m
+[1m--- a/segundoSemestre/datastructure/bubblesort/script/main.js[m
+[1m+++ b/segundoSemestre/datastructure/bubblesort/script/main.js[m
+[36m@@ -21,7 +21,7 @@[m [mbtnLength.addEventListener('click', eventCriarArray);[m
+ const btnBubbleSort = document.getElementById("btnBubbleSort");[m
+ const onBubbleSort = document.getElementById("onBubbleSort");[m
+ [m
+[31m-function bubbleSortLogic(){[m
+[32m+[m[32mfunction bubbleSort(){[m
+     const length = parseInt(inLength.value);[m
+     let arrayOrdenado = [...array]; //3 pontos passa cada elemento do array para dentro do novo invés de referenciar[m
+     let temp = 0;[m
+[36m@@ -34,42 +34,36 @@[m [mfunction bubbleSortLogic(){[m
+             }[m
+         }[m
+     }[m
+[31m-    return(arrayOrdenado);[m
+[31m-}[m
+[31m-[m
+[31m-function bubbleSort(){[m
+[31m-    let arrayOrdenado = bubbleSortLogic();[m
+     onBubbleSort.innerHTML = "Conjunto Ordenado = " + arrayOrdenado.join(", ");[m
+ }[m
+ btnBubbleSort.addEventListener('click', bubbleSort);[m
+ [m
+[31m-const inBusca = parseInt((document.getElementById("inBusca")).value);[m
+[31m-const btnBuscaBinary = document.getElementById("btnBuscaBinary");[m
+[31m-const onSaidaBuscaBinary = document.getElementById("onSaidaBuscaBinary");[m
+[32m+[m[32mconst inBusca = document.getElementById("inBusca");[m
+[32m+[m[32mconst btnBuscaBinary = document.getElementById("btncBuscaBinary");[m
+ [m
+[31m-function binarySearch(arrayOrdenado, numero){[m
+[31m-    let inicio = 0;[m
+[31m-    let fim = (arrayOrdenado.length - 1);[m
+[31m-    while(inicio<=fim){[m
+[31m-        let meio = (inicio+((fim-inicio)/2));[m
+[31m-        if(arrayOrdenado[meio] == numero){[m
+[31m-            return(meio);[m
+[31m-        }[m
+[31m-        if(arrayOrdenado[meio]<numero){[m
+[31m-            inicio = meio+1;[m
+[31m-        }else{[m
+[31m-            fim = meio-1;[m
+[31m-        }[m
+[32m+[m[32mfunction binarySearch(array, position, numero){[m
+[32m+[m[32m    if(array[position]>numero){[m
+[32m+[m[32m        return(position+(position/2));[m
+[32m+[m[32m    }else if(array[position]<numero){[m
+[32m+[m[32m        return(position/2);[m
+[32m+[m[32m    }else{[m
+[32m+[m[32m        return(true);[m
+     }[m
+[31m-    return(-1);[m
+ }[m
+ [m
+[31m-function binarySearchMontagem(){[m
+[31m-    let numeroBusca = inBusca;[m
+[31m-    const originalArrayCopy = [...bubbleSortLogic()];[m
+[31m-[m
+[31m-    onSaidaBuscaBinary.innerHTML = `Encontrado dentro do Array!`;[m
+[31m-[m
+[31m-}[m
+[31m-[m
+[31m-btnBuscaBinary.addEventListener('click', binarySearchMontagem);[m
+\ No newline at end of file[m
+[32m+[m[32mfunction binarySearchMontagem(array, numeroBusca){[m
+[32m+[m[32m    const length = parseInt(inLength.value);[m
+[32m+[m[32m    const originalArrayCopy = [...array];[m
+[32m+[m[32m    let tempPosition = length/2;[m
+[32m+[m[32m    let loop = true;[m
+[32m+[m[32m    let encontrado;[m
+[32m+[m[32m    while(loop){[m
+[32m+[m[32m        let busca = binarySearch(originalArrayCopy, tempPosition, numeroBusca);[m
+[32m+[m[32m        if(busca!=true){[m
+[32m+[m[32m            tempPosition = busca;[m
+[32m+[m[32m        }else{[m
+[32m+[m[32m            encontrado = tempPosition;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m    console.log(encontrado);[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/segundoSemestre/datastructure/pilha/img/VampetaMouse.png b/segundoSemestre/datastructure/pilha/img/VampetaMouse.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4debfd1[m
+Binary files /dev/null and b/segundoSemestre/datastructure/pilha/img/VampetaMouse.png differ
+[1mdiff --git a/segundoSemestre/datastructure/pilha/index.html b/segundoSemestre/datastructure/pilha/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ea1c20b[m
+[1m--- /dev/null[m
+[1m+++ b/segundoSemestre/datastructure/pilha/index.html[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m  <meta charset="UTF-8">[m
+[32m+[m[32m  <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m  <link rel="stylesheet" href="./style.css">[m
+[32m+[m[32m  <script type="module" src="./scripts/main.js" defer></script>[m
+[32m+[m[32m  <title>Palindromo</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m  <header>[m
+[32m+[m[32m    <h2>Fábio Ribeiro do Amaral Filho</h2>[m
+[32m+[m[32m  </header>[m
+[32m+[m[32m  <main>[m
+[32m+[m[41m    [m
+[32m+[m[32m  </main>[m
+[32m+[m[32m</body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/segundoSemestre/datastructure/pilha/scripts/main.js b/segundoSemestre/datastructure/pilha/scripts/main.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e600c7a[m
+[1m--- /dev/null[m
+[1m+++ b/segundoSemestre/datastructure/pilha/scripts/main.js[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mconsole.log("apsdpaksdjisad")[m
+\ No newline at end of file[m
+[1mdiff --git a/segundoSemestre/datastructure/pilha/scripts/pilha.js b/segundoSemestre/datastructure/pilha/scripts/pilha.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1fb269b[m
+[1m--- /dev/null[m
+[1m+++ b/segundoSemestre/datastructure/pilha/scripts/pilha.js[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32mimport class Pilha{[m
+[32m+[m[32m  #array[m
+[32m+[m[32m  #topo[m
+[32m+[m[32m  constructor() {[m
+[32m+[m[32m    this.#array = [];[m
+[32m+[m[32m    this.#topo = -1;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  isEmpty(){[m
+[32m+[m[32m    return(this.#topo === -1);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  getLength(){[m
+[32m+[m[32m    return(this.#topo+1);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  stack(elemento){[m
+[32m+[m[32m    this.#array[++this.#topo] = elemento;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  getElement(){[m
+[32m+[m[32m    if(this.isEmpty()){[m
+[32m+[m[32m      throw new Error("Pilha Vazia!");[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return(this.#array[this.#topo]);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  unstack(){[m
+[32m+[m[32m    if(this.isEmpty()){[m
+[32m+[m[32m      throw new Error("Pilha Vazia!");[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return(this.#array--);[m
+[32m+[m[32m  }[m
+[32m+[m[32m  clearStack(){[m
+[32m+[m[32m    this.#topo = -1;[m
+[32m+[m[32m    this.#array = [];[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/segundoSemestre/datastructure/pilha/style.css b/segundoSemestre/datastructure/pilha/style.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..45b5604[m
+[1m--- /dev/null[m
+[1m+++ b/segundoSemestre/datastructure/pilha/style.css[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mbody{[m
+[32m+[m[32m  margin: 0px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mh2{[m
+[32m+[m[32m  margin: 0px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mheader{[m
+[32m+[m[32m  display: grid;[m
+[32m+[m[32m  grid-template-columns:1fr 1fr 1fr;[m
+[32m+[m[32m  justify-content: space-between;[m
+[32m+[m[32m  background-image: url(./img/VampetaMouse.png);[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mheader h2{[m
+[32m+[m[32m  background-color: #ffffff;[m
+[32m+[m[32m  text-align: center;[m
+[32m+[m[32m  grid-column: 2;[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mheader span{[m
+[32m+[m[32m  width:auto;[m
+[32m+[m[32m  background-image: url(./img/VampetaMouse.png);[m
+[32m+[m[32m}[m

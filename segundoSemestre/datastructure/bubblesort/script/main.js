@@ -43,33 +43,35 @@ function bubbleSort(){
 }
 btnBubbleSort.addEventListener('click', bubbleSort);
 
-const inBusca = parseInt((document.getElementById("inBusca")).value);
+const inBusca = (document.getElementById("inBusca"));
 const btnBuscaBinary = document.getElementById("btnBuscaBinary");
 const onSaidaBuscaBinary = document.getElementById("onSaidaBuscaBinary");
 
-function binarySearch(arrayOrdenado, numero){
-    let inicio = 0;
-    let fim = (arrayOrdenado.length - 1);
-    while(inicio<=fim){
-        let meio = (inicio+((fim-inicio)/2));
-        if(arrayOrdenado[meio] == numero){
+function binarySearch(arrayOrdenado, inicio, fim, n){
+    if(fim>=inicio){
+        let meio = inicio+Math.floor((fim-inicio)/2);
+        if(arrayOrdenado[meio]===n){
             return(meio);
         }
-        if(arrayOrdenado[meio]<numero){
-            inicio = meio+1;
-        }else{
-            fim = meio-1;
+        if(arrayOrdenado[meio]>n){
+            return(binarySearch(arrayOrdenado, inicio, meio-1, n)); 
+        }
+        if(arrayOrdenado[meio]<n){
+            return(binarySearch(arrayOrdenado, meio+1, fim, n));
         }
     }
     return(-1);
 }
 
 function binarySearchMontagem(){ //Falta retrabalho
-    let numeroBusca = inBusca;
+    let numeroBusca = parseInt(inBusca.value);
     const originalArrayCopy = [...bubbleSortLogic()];
-
-    onSaidaBuscaBinary.innerHTML = `Encontrado dentro do Array!`;
-
+    let procura = binarySearch(originalArrayCopy, 0, (originalArrayCopy.length - 1),numeroBusca);
+    if(procura===-1){
+        onSaidaBuscaBinary.innerHTML = `Não encontrado dentro do Array!`;
+    }else{
+        onSaidaBuscaBinary.innerHTML = `Encontrado dentro do Array na posição ${procura}!`;
+    }
 }
 
 btnBuscaBinary.addEventListener('click', binarySearchMontagem);

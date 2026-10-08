@@ -64,7 +64,7 @@ function binarySearch(arrayOrdenado, numero){
     return(-1);
 }
 
-function binarySearchMontagem(){
+function binarySearchMontagem(){ //Falta retrabalho
     let numeroBusca = inBusca;
     const originalArrayCopy = [...bubbleSortLogic()];
 

@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Conecta Bairro</title>
+</head>
+<body>
+    <header>
+      <div class="headerFaviconDiv">
+        <span id="favicon">CB</span>
+        <div>
+          <h1>Conecta Bairro</h1>
+          <h2>Tecnologia perto de você</h2>
+        </div>
+      </div>
+      <nav class="navHeader">
+          <ul>
+            <li><a href="./index.html">O multirão</a></li>
+            <li><a href="./index.html">Serviços</a></li>
+            <li><a href="./index.html">Incrição</a></li>
+          </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="primeirasInfoMain">
+        <div class="atendimentoMain">
+          <span>ATENDIMENTO GRATUITO</span>
+          <h1>Seu problema com tecnologia<br>tem solução aqui no bairro.</h1>
+          <p>Voluntários ajudam você a cuidar do computador, usar a internet<br>e ganhar confiança no mundo digital.</p>
+        </div>
+        <div class="blocoInfo">
+          <p>NOSSO PROXIMO ENCONTRO</p>
+          <h1>Sábado, das 9h às 13h</h1>
+          <p>Centro Comunitário do Bairro</p>
+          <span>Leve seu aparelho e o carregador</span>
+        </div>
+      </section>
+      <section>
+        <div>
+          <span>COMO PODEMOS AJUDAR</span>
+          <h1>Escolha o seu atendimento</h1>
+        </div>
+        <article>
+          <div>
+            <span>01</span>
+            <h2>Computador em dia</h2>
+            <p>Seu computador está lento? Receba uma avaliação e orientação de cuidado.</p>
+            <button>Computadores e notebooks</button>
+          </div>
+          <div>
+            <span>02</span>
+            <h2>Internet sem complicação</h2>
+            <p>Aprenda a conectar seus aparelhos e a melhorar o uso do Wi-Fi em casa.</p>
+            <button>Conexão e Wi-Fi</button>
+          </div>
+          <div>
+            <span>03</span>
+            <h2>Primeiros passos digitais</h2>
+            <p>Tire dúvidas sobre email, chamadas de vídeo e cuidados com mensagens suspeitas.</p>
+            <button>Celular e Aplicativos</button>
+          </div>
+        </article>
+      </section>
+      <form>
+        <fieldset>
+          <span>PARTICIPE DO MULTIRÃO</span>
+          <h1>Qual ajuda você prescisa?</h1>
+          <p>Preencha seus dados e escolha um serviço.</p>
+          <div>
+            <div>
+              <label for="inNome">Seu nome</label>
+              <input id="inNome" placeholder="Digite seu nome">
+            </div>
+            <div>
+              <label for="inEmail">Seu email</label>
+              <input id="inEmail" placeholder="voce@exemplo.com">
+            </div>
+            <div>
+              <div>
+                <label for="inServico">Serviço de Interesse</label>
+                <select name="uf" id="inUf" required>
+                  <option value="none">Selecione um atendimento</option>
+                  <option value="1">Teste 1</option>
+                  <option value="2">Teste 2</option>
+                </select>
+              </div>
+              <button type="submit" value="btnSub">Quero Participar</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+    <footer>
+      <span><span style="font-weight: bold;">Conecta Bairro</span> · Conhecimento que aproxima.</span>
+      <span>Projeto ficticio para atividade em sala de aula.</span>
+    </footer>
+</body>
+</html>

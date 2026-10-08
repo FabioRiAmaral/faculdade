@@ -1,0 +1,26 @@
+body{
+  margin: 0px;
+}
+
+h2{
+  margin: 0px;
+}
+
+header{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  justify-content: space-between;
+  background-image: url(./img/VampetaMouse.png);
+}
+
+header h2{
+  background-color: #ffffff;
+  text-align: center;
+  grid-column: 2;
+
+}
+
+header span{
+  width:auto;
+  background-image: url(./img/VampetaMouse.png);
+}

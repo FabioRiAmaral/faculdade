@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./scripts/main.js" defer></script>
+    <script type="module" src="./scripts/main.js" defer></script>
 </head>
 <body>
     <h1>Segunda Aula de HTML com JavaScript</h1>
@@ -13,12 +13,12 @@
         <input type="number" placeholder="numero" id="inFirstNum">
         <label for="inSecondNum">Segundo Número:</label>
         <input type="number" placeholder="numero" id="inSecondNum">
-        <button type="button" id="btnAdicionar" onclick="adicionar()">ADICIONAR</button>
-        <button type="button" id="btnSubtrair" onclick="subtrair()">SUBTRAIR</button>
-        <button type="button" id="btnMultiplicar" onclick="multiplicar()">MULTIPLICAR</button>
-        <button type="button" id="btnDividir" onclick="dividir()">DIVIDIR</button>
-        <button type="button" id="btnPotencia" onclick="potencia()">POTENCIA</button>
-        <button type="button" id="btnRaiz" onclick="raiz()">RAIZ</button>
+        <button type="button" id="btnAdicionar" value="+">ADICIONAR</button>
+        <button type="button" id="btnSubtrair" value="-">SUBTRAIR</button>
+        <button type="button" id="btnMultiplicar" value="*">MULTIPLICAR</button>
+        <button type="button" id="btnDividir" value="/">DIVIDIR</button>
+        <button type="button" id="btnPotencia" value="**">POTENCIA</button>
+        <button type="button" id="btnRaiz" value="^">RAIZ</button>
         <p id="outResultado"></p>
     </div>
 </body>

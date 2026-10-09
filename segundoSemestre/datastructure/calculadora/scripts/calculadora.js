@@ -1,32 +1,53 @@
-export class Calculadora{
+export class Calculo{
     #numEsquerda
     #numDireita
-    #operacao
-    constructor(numEsquerda, numDireita, operacao){
+    #operador
+    constructor(numEsquerda, numDireita, operador){
         this.#numEsquerda = numEsquerda
         this.#numDireita = numDireita
-        this.#operacao = operacao
+        this.#operador = operador
     }
     set newNumEsquerda(newNum){this.#numEsquerda=newNum;}
     set newNumDireita(newNum){this.#numDireita=newNum;}
-    set newOperaor(newOp){this.#operacao=newOp;}
+    set newOperador(newOp){this.#operador=newOp;}
 
-    adicao(){
-        return(this.#numEsquerda+this.#numDireita);
+    adicao(a, b){
+        return(a+b);
     }
-    subtracao(){
-        return(this.#numEsquerda-this.#numDireita);
+    subtracao(a, b){
+        return(a-b);
     }
-    multiplicacao(){
-        return(this.#numEsquerda*this.#numDireita);
+    multiplicacao(a, b){
+        return(a*b);
     }
-    divisao(){
-        return(this.#numEsquerda/this.#numDireita);
+    divisao(a, b){
+        return(a/b);
     }
-    potencia(){
-        return(Math.pow(this.#numEsquerda, this.#numDireita));
+    potencia(a, b){
+        return(Math.pow(a, b));
     }
-    radiciacao(){
-        return(Math.pow(this.#numEsquerda, (1/this.#numDireita)));
+    radiciacao(a, b){
+        return(Math.pow(a, (1/b)));
+    }
+
+    operacao(){
+        const a = this.#numEsquerda;
+        const b = this.#numDireita;
+        const operador = this.#operador;
+        console.log(a, b);
+        switch(operador){
+            case("+"):
+                return(this.adicao(a, b));
+            case("-"):
+                return(this.subtracao(a, b));
+            case("*"):
+                return(this.multiplicacao(a, b));
+            case("/"):
+                return(this.divisao(a, b));
+            case("**"):
+                return(this.potencia(a, b));
+            case("^/"):
+                return(this.radiciacao(a, b));
+        }
     }
 }

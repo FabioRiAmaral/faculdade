@@ -18,37 +18,72 @@
     </ul>
   </header>
   <main>
-    <form>
+    <form id="formSalario">
       <fieldset class="fieldsetSalario">
         <legend>Dados do Funcionario para Cálculo</legend>
         <div>
           <label for="inMatriculaFuncionario">Matricula</label>
-          <input type="number" id="inMatriculaFuncionario" placeholder="......-." required>
+          <input name="matricula" type="number" id="inMatriculaFuncionario" placeholder="......-." required>
         </div>
         <div class="subCamposSalario">
           <div>
             <label for="inNomeFuncionario">Nome</label>
-            <input type="text" id="inNomeFuncionario" required>
+            <input name="nome" type="text" id="inNomeFuncionario" required>
           </div>
           <div>
             <label for="inNumDependentes">Dependentes</label>
-            <input type="number" id="inNumDependentes" required>
+            <input name="dependentes" type="number" id="inNumDependentes" required>
           </div>
           <div>
             <label for="inSalarioBase">Sálario Base</label>
-            <input type="number" id="inSalarioBase" required>
+            <input name="salarioBase" type="number" id="inSalarioBase" required>
           </div>
           <div>
             <label for="inProducao">Produção</label>
-            <input type="number" id="inProducao" required>
+            <input name="producao" type="number" id="inProducao" required>
           </div>
         </div>
         <div class="buttons">
-          <input id="inConsultar" type="submit" value="Consultar"></input>
+          <input id="inConsultarSalario" type="submit" value="Consultar"></input>
           <input type="reset" value="Redefinir"></input>
         </div>
       </fieldset>
     </form>
+    <table border="1" style="height: fit-content;">
+      <thead>
+        <tr>
+          <th id="outMatricula" colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="tableSalarioBase"></th>
+          <td id="outSalarioBase"></td>
+        </tr>
+        <tr>
+          <th id="tableGratificacao"></td>
+          <td id="outGratificacao"></td>
+        </tr>
+        <tr>
+          <th id="tableSalarioBruto"></th>
+          <td id="outSalarioBruto"></td>
+        </tr>
+        <tr>
+          <th id="tableInss"></th>
+          <td id="outInss"></td>
+        </tr>
+        <tr>
+          <th id="tableIrpf"></th>
+          <td id="outIrpf"></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th id="outSalarioLiquido" colspan="2"></th>
+        </tr>
+      </tfoot>
+    </table>
   </main>
+  <div>
 </body>
 </html>

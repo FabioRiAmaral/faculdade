@@ -82,22 +82,22 @@
           <div class="gridCampos">
             <div>
               <label for="inNome">Seu nome</label>
-              <input id="inNome" placeholder="Digite seu nome">
+              <input id="inNome" placeholder="Digite seu nome" required>
             </div>
             <div>
               <label for="inEmail">Seu email</label>
-              <input id="inEmail" placeholder="voce@exemplo.com">
+              <input id="inEmail" placeholder="voce@exemplo.com" required>
             </div>
             <div>
+              <label for="inUf">Serviço de Interesse</label>
               <div>
-                <label for="inServico">Serviço de Interesse</label>
                 <select name="uf" id="inUf" required>
                   <option value="none">Selecione um atendimento</option>
                   <option value="1">Teste 1</option>
                   <option value="2">Teste 2</option>
                 </select>
+                <button type="submit" value="btnSub">Quero Participar</button>
               </div>
-              <button type="submit" value="btnSub">Quero Participar</button>
             </div>
           </div>
         </fieldset>

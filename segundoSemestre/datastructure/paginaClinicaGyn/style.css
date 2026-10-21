@@ -36,10 +36,9 @@ header h1 a:not(:hover), header ul li a:not(:hover){
 }
 
 main{
-    display: grid;
+    display: flex;
     gap: 4rem;
-    place-self: center;
-    grid-template-columns: 1fr 1fr;
+    justify-content: center;
 }
 
 h2, p{

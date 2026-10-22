@@ -1,0 +1,16 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+.centralizar{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: #ffd7d7;
+}
+
+.centralizar:hover{
+  transform: rotate(1900000000000000deg);
+  transition: ease-in 120s;
+  position: relative;
+}

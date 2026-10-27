@@ -24,3 +24,10 @@ header span{
   width:auto;
   background-image: url(./img/VampetaMouse.png);
 }
+
+main{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  justify-content: center;
+}

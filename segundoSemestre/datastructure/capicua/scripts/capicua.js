@@ -1,0 +1,34 @@
+export class Capicua{
+  #array
+  #topo
+  constructor() {
+    this.#array = [];
+    this.#topo = -1;
+  }
+  isEmpty(){
+    return(this.#topo === -1);
+  }
+  getLength(){
+    return(this.#topo+1);
+  }
+  stack(elemento){
+    this.#array[++this.#topo] = elemento;
+  }
+  getElement(){
+    if(this.isEmpty()){
+      throw new Error("Pilha Vazia!");
+    }
+    console.log(this.#array);
+    return(this.#array[this.#topo]);
+  }
+  unstack(){
+    if(this.isEmpty()){
+      throw new Error("Pilha Vazia!");
+    }
+    return(this.#topo--);
+  }
+  clearStack(){
+    this.#topo = -1;
+    this.#array = [];
+  }
+}

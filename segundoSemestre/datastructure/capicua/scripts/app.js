@@ -1,6 +1,6 @@
-import { Capicua } from "./capicua.js";
+import { Pilha } from "./pilha.js";
 
-const pilha = new Capicua();
+const pilha = new Pilha();
 
 document.getElementById('btnVer').addEventListener('click', ()=>{
   let inNum = parseInt(document.getElementById('inNum').value);

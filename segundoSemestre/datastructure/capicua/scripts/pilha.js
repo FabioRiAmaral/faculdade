@@ -1,4 +1,4 @@
-export class Capicua{
+export class Pilha{
   #array
   #topo
   constructor() {

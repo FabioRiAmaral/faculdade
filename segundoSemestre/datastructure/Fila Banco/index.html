@@ -1,30 +1,39 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module" src="./scripts/app.js" defer></script>
-  <link rel="stylesheet" href="./style.css">
-  <title>Banco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fila de Banco</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="scripts/app.js" defer></script>
 </head>
 <body>
-  <header>
-    <span>BF</span>
-    <h1>Fila de Banco</h1>
-    <span>Foto</span>
-  </header>
-  <main>
-    <div>
-      <label for="inName">Nome</label>
-      <input id="inName" type="text" required>
-      <button type="button" id="btnIncluir">Incluir na Fila</button>
-    </div>
-    <div>
-      <button type="button" id="btnRetirar">Retirar da Fila</button>
-      <button type="button" id="btnAcessar">Acessar Fila</button>
-    </div>
-    <h1>Primeiro da Fila: <h1 id="outFila">Fila Vazia</h1></h1>
-    <hr>
-    
+  <main class="painel">
+    <header class="topo">
+      <img src="./Imagem colada.png" class="logo">
+      <h1>Fila de Banco</h1>
+      <img src="./Imagem colada.png" class="foto">
+    </header>
+    <section class="controles">
+      <div class="campo">
+        <label for="inNome">Nome</label>
+        <input type="text" id="inNome">
+        <button type="button" id="btnIncluir" class="primario">Incluir na fila</button>
+      </div>
+      <div class="acoes">
+        <button type="button" id="btnRetirar">Retirar</button>
+        <button type="button" id="btnAcessar">Acessar</button>
+      </div>
+      <p class="primeiro">
+        Primeiro da fila:
+        <strong id="outPrimeiro">Não tem pessoa</strong>
+      </p>
+      <p id="outMensagem" class="mensagem"></p>
+    </section>
+    <section class="mostrar">
+      <h2>Mostrar fila</h2>
+      <p class="linha-fila">fila = <span id="outFila"></span></p>
+    </section>
   </main>
 </body>
 </html>

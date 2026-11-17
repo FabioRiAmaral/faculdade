@@ -1,28 +1,27 @@
 import { Pilha } from "./pilha.js";
 
 let pilha = new Pilha();
-const palavra = document.getElementById('inWord').value;
-let palavraReverse = '';
-
-function comparar(){
-    palavraReverse = '';
-    for(let e=0;e<palavra.length;e++){
-      if(palavra[e] != ' '){
-        pilha.stack(palavra[e]);
-      }
-    }
-    for(let e=0;e<palavra.length;e++){
-        palavraReverse += pilha.getElement();
-        pilha.unstack();
-    }
-    console.log(palavraReverse);
-    if(palavraReverse == palavra){
-      document.getElementById('onSaida').innerHTML = `A plavra ${palavra} é uma palindromo`;
-    }else{
-      document.getElementById('onSaida').innerHTML = `A plavra ${palavra} não é uma palindromo`;
-    }
-}
+const inWord = document.getElementById('inWord');
+const saida = document.getElementById('onSaida');
 
 document.getElementById('btnWord').addEventListener('click', ()=>{
-  comparar();
+  let palavra = inWord.value;
+  const minuscula = palavra.toLowerCase();
+  let limpa = '';
+  for (let i = 0; i < minuscula.length; i++) {
+    if (minuscula[i] !== ' ') {
+      limpa += minuscula[i];
+      pilha.stack(minuscula[i]);
+    }
+  }
+  let reverso = '';
+  while (!pilha.isEmpty()) {
+    reverso += pilha.getElement();
+    pilha.unstack();
+  }
+  if (reverso === limpa) {
+    saida.innerHTML = `"${palavra}" é um palíndromo!`;
+  } else {
+    saida.innerHTML = `"${palavra}" não é um palíndromo!`;
+  }
 });

@@ -18,7 +18,6 @@ export class Pilha{
     if(this.isEmpty()){
       throw new Error("Pilha Vazia!");
     }
-    console.log(this.#array);
     return(this.#array[this.#topo]);
   }
   unstack(){

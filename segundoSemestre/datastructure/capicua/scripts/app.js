@@ -1,11 +1,10 @@
 import { Pilha } from "./pilha.js";
 
-const pilha = new Pilha();
-
 const inNum = document.getElementById('inNum');
 const out = document.getElementById('out');
 
 document.getElementById('btnVer').addEventListener('click', ()=>{
+  const pilha = new Pilha();
   let num = parseInt(inNum.value);
   const original = num;
   while(num>0){
@@ -13,9 +12,11 @@ document.getElementById('btnVer').addEventListener('click', ()=>{
     num = Math.floor(num/10);
   }
   let invertido = 0;
-  while(!pilha.isEmpty){
-    invertido = pilha.getElement()+(invertido*10);
-    pilha.unstack;
+  let posicao = 1;
+  while(!pilha.isEmpty()){
+    invertido += pilha.getElement()*posicao;
+    pilha.unstack();
+    posicao *= 10;
   }
   if(original===invertido){
     out.innerText = `${original} é capicua!`;

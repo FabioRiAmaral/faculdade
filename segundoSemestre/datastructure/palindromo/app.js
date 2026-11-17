@@ -6,6 +6,10 @@ const saida = document.getElementById('onSaida');
 
 document.getElementById('btnWord').addEventListener('click', ()=>{
   let palavra = inWord.value;
+  if(palavra===''){
+    saida.innerHTML = `Não há nenhuma palavra no input`;
+    return;
+  }
   const minuscula = palavra.toLowerCase();
   let limpa = '';
   for (let i = 0; i < minuscula.length; i++) {
@@ -21,7 +25,7 @@ document.getElementById('btnWord').addEventListener('click', ()=>{
   }
   if (reverso === limpa) {
     saida.innerHTML = `"${palavra}" é um palíndromo!`;
-  } else {
+  }else {
     saida.innerHTML = `"${palavra}" não é um palíndromo!`;
   }
 });

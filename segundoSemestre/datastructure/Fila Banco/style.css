@@ -1,19 +1,16 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: rgb(239, 239, 239);
   margin: 0;
   padding: 20px;
 }
 
 .painel {
-  max-width: 700px;
-  margin: 0 auto;
   background-color: white;
-  border: 1px solid #333;
+  border: 1px solid #000;
+  border-radius: 2rem;
   padding: 20px;
 }
 
-/* topo */
 .topo {
   display: flex;
   justify-content: space-between;
@@ -21,9 +18,7 @@ body {
 }
 
 .logo, .foto {
-  width: 80px;
-  height: 60px;
-  border: 1px solid #333;
+  border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +29,6 @@ h1 {
   text-align: center;
 }
 
-/* controles */
 .controles {
   margin-top: 20px;
 }
@@ -46,7 +40,6 @@ input {
 
 button {
   padding: 6px 12px;
-  cursor: pointer;
 }
 
 .acoes {
@@ -57,43 +50,13 @@ button {
   margin-top: 15px;
 }
 
-.mensagem {
-  color: green;
-}
-
-.mensagem.erro {
-  color: red;
-}
-
-/* mostrar fila */
 .mostrar {
   margin-top: 20px;
   border-top: 1px solid #333;
   padding-top: 10px;
 }
 
-.tickets {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.tickets li {
-  border: 1px solid #333;
-  padding: 6px 10px;
-}
-
-.tickets li:first-child {
-  background-color: #ffe9a0;
-}
-
 .vazia {
   border: none;
   color: gray;
-}
-
-img.foto {
-  object-fit: cover;
 }

@@ -20,7 +20,7 @@ export class Fila {
 
   // Quantidade de elementos da fila
   obterTamanho() {
-    return this.#tamanho;
+    return(this.#tamanho);
   }
 
   // Incluir elemento no final da fila
@@ -35,7 +35,7 @@ export class Fila {
     if (this.estaVazia()) {
       throw new Error("Fila vazia: não há elemento no início.");
     }
-    return this.#array[this.#inicio];
+    return(this.#array[this.#inicio]);
   }
 
   // Remover o elemento do início da fila

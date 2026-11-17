@@ -7,9 +7,8 @@ const outPrimeiro = document.getElementById('outPrimeiro');
 const outMensagem = document.getElementById('outMensagem');
 const outFila = document.getElementById('outFila');
 
-function mostrarFila() {
+function mostrarFila(){
   outFila.innerText = fila.obterDadosFila();
-
   if (fila.estaVazia()) {
     outPrimeiro.innerText = 'Não tem pessoa';
   }
@@ -17,12 +16,9 @@ function mostrarFila() {
 
 document.getElementById('btnIncluir').addEventListener('click', () => {
   const nome = inNome.value;
-
   if (nome === '') {
     outMensagem.innerText = 'Digite o nome da pessoa.';
-    return;
   }
-
   fila.enfileirar(nome);
   outMensagem.innerText = `${nome} entrou na fila.`;
   inNome.value = '';
@@ -30,17 +26,10 @@ document.getElementById('btnIncluir').addEventListener('click', () => {
 });
 
 document.getElementById('btnRetirar').addEventListener('click', () => {
-  if (fila.estaVazia()) {
-    outMensagem.innerText = 'Não há ninguém para retirar.';
-    return;
-  }
-
   const saiu = fila.acessar();
   fila.desenfileirar();
   outMensagem.innerText = `${saiu} saiu da fila.`;
-
-  // fila vazia: reinicia os índices
-  if (fila.estaVazia()) {
+  if(fila.estaVazia()) {
     fila.limpar();
   }
   mostrarFila();
@@ -49,9 +38,7 @@ document.getElementById('btnRetirar').addEventListener('click', () => {
 document.getElementById('btnAcessar').addEventListener('click', () => {
   if (fila.estaVazia()) {
     outPrimeiro.innerText = 'Não tem pessoa';
-    return;
   }
-
   outPrimeiro.innerText = fila.acessar();
 });
 

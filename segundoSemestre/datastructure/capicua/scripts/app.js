@@ -2,24 +2,24 @@ import { Pilha } from "./pilha.js";
 
 const pilha = new Pilha();
 
+const inNum = document.getElementById('inNum');
+const out = document.getElementById('out');
+
 document.getElementById('btnVer').addEventListener('click', ()=>{
-  let inNum = parseInt(document.getElementById('inNum').value);
-  let ordemNum, numTemp = inNum, numLength = numTemp.toString().length;
-  for(let e=0;e<=numLength;e++){
-    numLength = numTemp.toString().length;
-    ordemNum = Math.floor(numTemp/(10**(numLength-1)));
-    pilha.stack(ordemNum);
-    numTemp = numTemp-ordemNum*(10**(numLength-1));
+  let num = parseInt(inNum.value);
+  const original = num;
+  while(num>0){
+    pilha.stack(num%10);
+    num = Math.floor(num/10);
   }
-  let reverse = '';
-  while(!pilha.isEmpty()){
-    reverse += pilha.getElement();
-    pilha.unstack();
+  let invertido = 0;
+  while(!pilha.isEmpty){
+    invertido = pilha.getElement()+(invertido*10);
+    pilha.unstack;
   }
-  reverse = parseInt(reverse);
-  if(reverse!=inNum){
-    alert(`O reverso de ${inNum} é ${reverse}, portanto não é uma capicua :(`);
+  if(original===invertido){
+    out.innerText = `${original} é capicua!`;
   }else{
-    alert(`O reverso de ${inNum} é ${reverse}, é uma capicua :)`);
+    out.innerText = `${original} invertido é ${invertido}, portanto não é capicua!`
   }
 });

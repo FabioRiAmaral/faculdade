@@ -41,6 +41,7 @@ export class Fila {
   // Remover o elemento do início da fila
   desenfileirar() {
     if (this.estaVazia()) {
+      this.limpar();
       throw new Error("Fila vazia: nada para desenfileirar.");
     }
     this.#inicio++;

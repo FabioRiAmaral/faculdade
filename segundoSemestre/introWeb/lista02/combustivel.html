@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./scripts/combus.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Combustivel</title>
+</head>
+<body>
+  <main>
+    <div class="divElementos">
+      <label for="inPrecoCombus">Quantos litros de Combustivel: </label>
+      <div class="inputs">
+        <input type="text" id="inPrecoCombus" required>
+        <div class="select">
+          <label for="inTipoCombus">Tipo de Combustivel: </label>
+          <select id="inTipoCombus" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+        </div>
+        <button type="button" id="btnCombus">Calcular</button>
+      </div>
+    </div>
+    <span id="outPrecoCombus"></span>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./scripts/app.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>Preço com juros</title>
+</head>
+<body>
+  <main>
+    <div class="divElementos">
+      <label for="inPreco">Insira o Preço Integral: </label>
+      <div class="inputs">
+        <input type="text" id="inPreco" required>
+        <div>
+          <label for="inCod">Tipo de Pagamento: </label>
+          <select id="inCod" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+        </div>
+        <button type="button" id="btnCalc">Calcular</button>
+      </div>
+    </div>
+    <span id="outPreco"></span>
+  </main>
+</body>
+</html>
